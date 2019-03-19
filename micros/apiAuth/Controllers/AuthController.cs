@@ -15,21 +15,20 @@ namespace apiAuth.Controllers
         public string Password { get; set; }
     }
 
-    [Route("api/auth")]
+    [Route("api-auth/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {
-        
         [HttpPost]
         public IActionResult Auth([FromBody] LoginDto loginDto)
         {
             if(loginDto == null)
                 return BadRequest("Invalid client request");
-            if(!loginDto.Username.Equals("root")&& !loginDto.Password.Equals("root"))
+            if(!loginDto.Username.Equals("root") && !loginDto.Password.Equals("root"))
                 return BadRequest("Invalid username or password");
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("ThisIsSecretVEryVerySecretKEY@3123!@#@#@#SD123123123czsr123!!!");
+            var key = Encoding.ASCII.GetBytes("VGhpcyBpcyBteSBFbmNyaXB0ZWQgU2VjcmVkIGFuZCB3ZXJ5IEhhcmRjb2RlZCBrZXkhIEFuZCBpdCBoYXMgTnVtYmVycyBTMTIzMTIzU2hTZTEyMw==");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
