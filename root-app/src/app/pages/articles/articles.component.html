@@ -1,0 +1,31 @@
+<dx-data-grid
+    id="grid"
+    [dataSource]="dataSource"  
+    [repaintChangesOnly]="true"
+    [showBorders]="true"
+    (onRowUpdating)="onRowUpdating($event)">
+
+    <dxo-scrolling mode="virtual"></dxo-scrolling>
+    <dxo-editing
+        mode="popup"
+        [refreshMode]="refreshMode"
+        [allowAdding]="true"
+        [allowUpdating]="true"
+        [allowDeleting]="true">
+    </dxo-editing>
+
+    <dxi-column dataField="ArticleId" caption="ID"></dxi-column>
+    <dxi-column dataField="Title"></dxi-column>
+    <dxi-column dataField="Authors"></dxi-column>
+    <dxi-column dataField="Journal"></dxi-column>
+    <dxi-column dataField="Volume"></dxi-column>
+    <dxi-column dataField="Issue"></dxi-column>
+    <dxi-column dataField="Pages"></dxi-column>
+    <dxi-column dataField="Year"></dxi-column>
+    <dxi-column dataField="City"></dxi-column>
+    <dxi-column dataField="Publisher"></dxi-column>
+    <dxi-column dataField="Issn"></dxi-column>
+    <dxi-column dataField="Doi"></dxi-column>
+    <dxi-column dataField="Abstract"></dxi-column>
+    <dxi-column dataField="Keywords"></dxi-column>
+</dx-data-grid>

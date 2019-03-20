@@ -5,17 +5,19 @@ import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DisplayDataComponent } from './pages/display-data/display-data.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { ConferencesComponent } from './pages/conferences/conferences.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 
 const routes: Routes = [
   {
-    path: 'display-data',
-    component: DisplayDataComponent,
+    path: 'articles',
+    component: ArticlesComponent,
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'conferences',
+    component: ConferencesComponent,
     canActivate: [ AuthGuardService ]
   },
   {
