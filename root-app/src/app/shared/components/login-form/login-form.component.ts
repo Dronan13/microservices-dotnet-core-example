@@ -15,8 +15,8 @@ import { DxValidationGroupModule } from 'devextreme-angular/ui/validation-group'
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent {
-  login = '';
-  password = '';
+  Username = '';
+  Password = '';
 
   constructor(private authService: AuthService, public appInfo: AppInfoService) { }
 
@@ -25,7 +25,7 @@ export class LoginFormComponent {
       return;
     }
 
-    this.authService.logIn(this.login, this.password);
+    this.authService.logIn(this.Username, this.Password);
 
     args.validationGroup.reset();
   }
